@@ -1,0 +1,44 @@
+---
+name: Build ISOs
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-iso
+  cancel-in-progress: true
+
+jobs:
+  build-iso:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+      - name: Build ISO
+        uses: jasonn3/build-container-installer@main
+        id: build
+        with:
+          image_name: lukha
+          image_repo: ghcr.io/levitrammell
+          image_tag: latest
+          version: 40
+          variant: river
+          iso_name: lukha-40.iso
+          secure_boot_key_url: "https://github.com/ublue-os/akmods/raw/main/certs/public_key.der"
+          enrollment_password: "ublue-os"
+          web_ui: true
+
+      - name: Upload ISO as artifact
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.build.outputs.iso_name }}
+          path: |
+            ${{ steps.build.outputs.iso_path }}
+            ${{ steps.build.outputs.iso_path }}-CHECKSUM
+          if-no-files-found: error
+          retention-days: 0
+          compression-level: 0
