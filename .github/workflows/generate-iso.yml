@@ -28,7 +28,7 @@ jobs:
         id: build
         with:
           image_name: lukha-nvidia
-          image_repo: ghcr.io/LeviTrammell
+          image_repo: ghcr.io/levitrammell
           image_tag: latest
           version: 40
           variant: river
