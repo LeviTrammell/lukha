@@ -34,9 +34,9 @@ jobs:
         with:
           image_name: lukha-nvidia
           image_repo: ghcr.io/levitrammell
-          image_tag: latest
+          image_tag: 40
           version: 40
-          variant: river-nvidia
+          variant: base-main
           iso_name: lukha-40.iso
           secure_boot_key_url: "https://github.com/ublue-os/akmods/raw/main/certs/public_key.der"
           enrollment_password: "ublue-os"
