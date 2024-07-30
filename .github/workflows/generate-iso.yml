@@ -33,10 +33,9 @@ jobs:
       - name: Build ISO
         run: |
           mkdir ./iso-output
-          sudo docker run --rm --privileged --volume ./iso-output:/build-container-installer/build --pull=always \
+          sudo docker run --rm --privileged --volume ./iso-output:/build-container-installer/build --volume /home/runner/.docker/config.json:/docker-config.json --pull=always \
           ghcr.io/jasonn3/build-container-installer:latest \
-          REGISTRY_USER=${{ env.REGISTRY_USER }} \
-          REGISTRY_PASSWORD=${{ env.REGISTRY_USER }} \
+          REGISTRY_AUTH_FILE=/docker-config.json \
           IMAGE_REPO=${{ env.IMAGE_REGISTRY }} \
           IMAGE_NAME=lukha-nvidia \
           IMAGE_TAG=latest
