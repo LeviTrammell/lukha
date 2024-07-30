@@ -33,7 +33,7 @@ jobs:
       - name: Build ISO
         run: |
           mkdir ./iso-output
-          sudo docker run --rm --privileged --volume ./iso-output:/build-container-installer/build --volume /home/runner/.docker/config.json:~/.docker/config.json --pull=always \
+          sudo docker run --rm --privileged --volume ./iso-output:/build-container-installer/build --pull=always \
           ghcr.io/jasonn3/build-container-installer:latest \
           REGISTRY_USER=${{ env.REGISTRY_USER }} \
           REGISTRY_PASSWORD=${{ env.REGISTRY_USER }} \
