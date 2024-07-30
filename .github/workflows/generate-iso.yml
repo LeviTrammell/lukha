@@ -28,19 +28,31 @@ jobs:
           username: ${{ env.REGISTRY_USER }}
           password: ${{ env.REGISTRY_PASSWORD }}
           registry: ${{ env.IMAGE_REGISTRY }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Build ISO
-        uses: jasonn3/build-container-installer@main
-        id: build
-        with:
-          image_name: lukha-nvidia
-          image_repo: ghcr.io/levitrammell
-          image_tag: 40
-          version: 40
-          variant: base-main
-          iso_name: lukha-40.iso
-          secure_boot_key_url: "https://github.com/ublue-os/akmods/raw/main/certs/public_key.der"
-          enrollment_password: "ublue-os"
-          web_ui: true
+        run: |
+          mkdir ./iso-output
+          sudo docker run --rm --privileged --volume ./iso-output:/build-container-installer/build --volume /home/runner/.docker/config.json:~/.docker/config.json --pull=always \
+          ghcr.io/jasonn3/build-container-installer:latest \
+          REGISTRY_USER=${{ env.REGISTRY_USER }} \
+          REGISTRY_PASSWORD=${{ env.REGISTRY_USER }} \
+          IMAGE_REPO=${{ env.IMAGE_REGISTRY }} \
+          IMAGE_NAME=lukha-nvidia \
+          IMAGE_TAG=latest
+      # - name: Build ISO
+      #   uses: jasonn3/build-container-installer@main
+      #   id: build
+      #   with:
+      #     image_name: lukha-nvidia
+      #     image_repo: ghcr.io/levitrammell
+      #     image_tag: 40
+      #     version: 40
+      #     variant: base-main
+      #     iso_name: lukha-40.iso
+      #     secure_boot_key_url: "https://github.com/ublue-os/akmods/raw/main/certs/public_key.der"
+      #     enrollment_password: "ublue-os"
+      #     web_ui: true
       - name: Upload ISO as artifact
         id: upload
         uses: actions/upload-artifact@v4
