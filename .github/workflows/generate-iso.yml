@@ -58,8 +58,7 @@ jobs:
         with:
           name: ${{ steps.build.outputs.iso_name }}
           path: |
-            ${{ steps.build.outputs.iso_path }}
-            ${{ steps.build.outputs.iso_path }}-CHECKSUM
+            ./iso-output/deploy.iso
           if-no-files-found: error
           retention-days: 0
           compression-level: 0
