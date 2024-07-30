@@ -21,7 +21,7 @@ jobs:
         uses: jasonn3/build-container-installer@main
         id: build
         with:
-          image_name: lukha
+          image_name: lukha-nvidia
           image_repo: ghcr.io/levitrammell
           image_tag: latest
           version: 40
@@ -30,6 +30,12 @@ jobs:
           secure_boot_key_url: "https://github.com/ublue-os/akmods/raw/main/certs/public_key.der"
           enrollment_password: "ublue-os"
           web_ui: true
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.G_TOKEN }}
 
       - name: Upload ISO as artifact
         id: upload
