@@ -6,7 +6,7 @@ on:
   workflow_call:
 
 env:
-  REGISTRY_USER: ${{ github.actor }}
+  REGISTRY_USER: levitrammell
   REGISTRY_PASSWORD: ${{ github.token }}
   IMAGE_REGISTRY: ghcr.io/levitrammell
 
