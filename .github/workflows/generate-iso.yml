@@ -41,8 +41,9 @@ jobs:
           IMAGE_TAG=latest \
           VARIANT="base" \
           VERSION="40" \
-          SECURE_BOOT_KEY_URL: 'https://github.com/ublue-os/akmods/raw/main/certs/public_key.der' \
-          ENROLLMENT_PASSWORD: 'ublue-os'
+          ISO_NAME="lukha-nvidia.iso" \
+          SECURE_BOOT_KEY_URL="https://github.com/ublue-os/akmods/raw/main/certs/public_key.der" \
+          ENROLLMENT_PASSWORD="ublue-os"
       # - name: Build ISO
       #   uses: jasonn3/build-container-installer@main
       #   id: build
@@ -62,7 +63,7 @@ jobs:
         with:
           name: lukha-nvidia.iso
           path: |
-            ./iso-output/deploy.iso
+            ./iso-output/lukha-nvidia.iso
           if-no-files-found: error
           retention-days: 0
           compression-level: 0
