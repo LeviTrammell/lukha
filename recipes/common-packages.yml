@@ -79,3 +79,7 @@ install:
   - paper-icon-theme
   - breeze-icon-theme 
   - papirus-icon-theme
+
+remove:
+  - firefox
+  - firefox-langpacks
