@@ -1,0 +1,6 @@
+type: default-flatpaks
+system:
+  install:
+    - org.mozilla.firefox
+    - org.gimp.GIMP
+    - org.videolan.VLC
