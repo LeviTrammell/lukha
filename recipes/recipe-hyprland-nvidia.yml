@@ -12,6 +12,10 @@ stages:
           - rustdependencies.sh
 
 modules:
+  - type: copy
+    from: eww
+    src: /tmp/eww/target/release/eww
+    dest: /usr/bin/
   - from-file: sddm-packages.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml
@@ -20,10 +24,6 @@ modules:
   - from-file: common-files.yml
   - from-file: common-scripts.yml
   - from-file: hyprland-scripts.yml  
-  - type: copy
-    from: eww
-    src: /tmp/eww/target/release/eww
-    dest: /usr/bin
   - from-file: sddm-scripts.yml
   - type: wayblue-signing
   - from-file: sddm-systemd.yml
