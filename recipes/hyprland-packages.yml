@@ -5,3 +5,4 @@ install:
   - xdg-desktop-portal-hyprland
   - brightnessctl
   - hyprlock
+  - hyprpaper
