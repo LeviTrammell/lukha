@@ -2,4 +2,3 @@ type: script
 scripts:
   - settheming.sh
   - chshzsh.sh
-  - rustdependencies.sh
