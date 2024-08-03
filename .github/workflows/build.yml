@@ -2,11 +2,11 @@
 name: build-lukha
 on:
   schedule:
-    - cron: "00 4 * * *" 
+    - cron: "00 4 * * *"
   push:
     paths-ignore:
       - "**.md"
-      
+
   pull_request:
   workflow_dispatch: # allow manually triggering builds
 jobs:
@@ -21,7 +21,7 @@ jobs:
       fail-fast: false # stop GH from cancelling all matrix builds if one fails
       matrix:
         recipe:
-          - recipe-river-nvidia.yml
+          - recipe-hyprland-nvidia.yml
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
