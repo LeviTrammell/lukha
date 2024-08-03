@@ -21,6 +21,7 @@ install:
   - google-noto-emoji-fonts
   - gnome-disk-utility
   - ddcutil
+  - podman-compose
   
 # sound
   - wireplumber
