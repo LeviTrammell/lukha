@@ -22,8 +22,6 @@ install:
   - gnome-disk-utility
   - ddcutil
   - podman-compose
-  - fira-code-fonts
-  - fd-find
   
 # sound
   - wireplumber
