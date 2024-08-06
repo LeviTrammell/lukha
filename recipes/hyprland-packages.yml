@@ -13,5 +13,4 @@ install:
   - aylurs-gtk-shell
   - fira-code-fonts
   - fd-find
-  - glibc
-  - steam 
+  - @kde-desktop
