@@ -5,7 +5,7 @@ image-version: 40
 
 stages:
   - name: eww
-    from: docker.io/library/rust:1.76.0
+    from: docker.io/library/rust:1.76.0-slim
     modules:
       - type: script
         scripts: 
