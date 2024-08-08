@@ -19,6 +19,10 @@ modules:
   - from-file: sddm-packages.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml
+  - type: chezmoi
+    repository: "https://github.com/LeviTrammell/dotfiles" # my dotfiles repo
+    all-users: true # make users have to enable chezmoi manually
+    file-conflict-policy: replace
   - from-file: hyprland-packages.yml
   - from-file: hyprland-files.yml
   - from-file: 1password-package.yml
