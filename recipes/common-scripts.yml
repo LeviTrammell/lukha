@@ -1,4 +1,4 @@
 type: script
 scripts:
   - settheming.sh
-  - chshzsh.sh
+#  - chshzsh.sh

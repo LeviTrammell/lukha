@@ -3,19 +3,7 @@ description: ublue images for wayland compositors
 base-image: ghcr.io/ublue-os/base-nvidia
 image-version: 40
 
-stages:
-  - name: eww
-    from: docker.io/library/rust:1.76.0-slim
-    modules:
-      - type: script
-        scripts: 
-          - rustdependencies.sh
-
 modules:
-  - type: copy
-    from: eww
-    src: /tmp/eww/target/release/eww
-    dest: /usr/bin/
   - from-file: sddm-packages.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml
