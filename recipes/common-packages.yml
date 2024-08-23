@@ -82,6 +82,8 @@ install:
   - breeze-icon-theme 
   - papirus-icon-theme
 
+  - corectrl
+
 remove:
   - firefox
   - firefox-langpacks

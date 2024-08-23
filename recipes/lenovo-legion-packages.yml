@@ -1,0 +1,6 @@
+type: rpm-ostree
+repos:
+  - "https://copr.fedorainfracloud.org/coprs/sunwire/envycontrol/repo/fedora-40/sunwire-envycontrol-fedora-40.repo"
+install:
+  - python3-envycontrol
+
