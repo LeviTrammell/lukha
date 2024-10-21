@@ -42,7 +42,7 @@ jobs:
           containers: ${{ env.BASE_IMAGE_NAME }}:${{ env.IMAGE_MAJOR_VERSION }}
 
       - name: Build lukha
-        uses: blue-build/github-action@v1.6.1
+        uses: blue-build/github-action@v1.6.2
         with:
           cli_version: v0.8.11
           recipe: ${{ matrix.recipe }}
