@@ -37,13 +37,13 @@ jobs:
           ghcr.io/jasonn3/build-container-installer:latest \
           REGISTRY_AUTH_FILE=/docker-config.json \
           IMAGE_REPO=${{ env.IMAGE_REGISTRY }} \
-          IMAGE_NAME=lukha-nvidia \
+          IMAGE_NAME=lukha-pegasus-console \
           IMAGE_TAG=latest \
           VARIANT="base" \
           VERSION="40" \
-          ISO_NAME="build/lukha-nvidia.iso" \
-          SECURE_BOOT_KEY_URL="https://github.com/ublue-os/akmods/raw/main/certs/public_key.der" \
-          ENROLLMENT_PASSWORD="ublue-os"
+          ISO_NAME="build/lukha-nvidia.iso"
+          #          SECURE_BOOT_KEY_URL="https://github.com/ublue-os/akmods/raw/main/certs/public_key.der" \
+          #          ENROLLMENT_PASSWORD="ublue-os"
       # - name: Build ISO
       #   uses: jasonn3/build-container-installer@main
       #   id: build

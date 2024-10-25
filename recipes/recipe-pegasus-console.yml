@@ -1,0 +1,4 @@
+name: lukha-pegasus-console
+description: ublue images for wayland compositors
+base-image: ghcr.io/ublue-os/base
+image-version: 40

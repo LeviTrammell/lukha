@@ -22,6 +22,8 @@ jobs:
       matrix:
         recipe:
           - recipe-hyprland-nvidia.yml
+          - recipe-pegasus-console.yml
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4

@@ -1,0 +1,17 @@
+type: rpm-ostree
+install:
+
+# environment
+  - polkit
+
+  - xarchiver
+  - imv
+  - p7zip
+  - unrar
+
+  # notifications
+  - dunst
+
+remove:
+  - firefox
+  - firefox-langpacks
