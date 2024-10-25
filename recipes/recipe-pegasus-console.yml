@@ -2,3 +2,9 @@ name: lukha-pegasus-console
 description: ublue images for wayland compositors
 base-image: ghcr.io/ublue-os/base
 image-version: 40
+
+modules:
+  - type: chezmoi
+    repository: "https://github.com/LeviTrammell/dotfiles" # my dotfiles repo
+    all-users: true # make users have to enable chezmoi manually
+    file-conflict-policy: replace
