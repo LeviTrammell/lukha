@@ -22,6 +22,7 @@ install:
   - gnome-disk-utility
   - ddcutil
   - podman-compose
+  - util-linux-user
   
 # sound
   - wireplumber
@@ -80,6 +81,8 @@ install:
   - paper-icon-theme
   - breeze-icon-theme 
   - papirus-icon-theme
+
+  - corectrl
 
 remove:
   - firefox

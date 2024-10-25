@@ -3,24 +3,18 @@ description: ublue images for wayland compositors
 base-image: ghcr.io/ublue-os/base-nvidia
 image-version: 40
 
-stages:
-  - name: eww
-    from: docker.io/library/rust
-    modules:
-      - type: script
-        scripts: 
-          - rustdependencies.sh
-
 modules:
-  - type: copy
-    from: eww
-    src: /tmp/eww/target/release/eww
-    dest: /usr/bin/
   - from-file: sddm-packages.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml
+  - type: chezmoi
+    repository: "https://github.com/LeviTrammell/dotfiles" # my dotfiles repo
+    all-users: true # make users have to enable chezmoi manually
+    file-conflict-policy: replace
   - from-file: hyprland-packages.yml
   - from-file: hyprland-files.yml
+  - from-file: 1password-package.yml
+  - from-file: lenovo-legion-packages.yml
   - from-file: common-files.yml
   - from-file: common-scripts.yml
   - from-file: hyprland-scripts.yml  
