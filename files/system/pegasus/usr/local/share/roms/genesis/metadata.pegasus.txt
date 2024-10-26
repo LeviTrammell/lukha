@@ -1,0 +1,4 @@
+collection: Sega Genesis
+shortname: genesis
+extensions: 7z, bin, gen, md, sg, smd, zip
+launch: flatpak run org.libretro.RetroArch -f -L "{home}/.var/app/org.libretro.RetroArch/config/retroarch/cores/blastem_libretro.so" {file.path}

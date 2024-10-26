@@ -1,0 +1,4 @@
+collection: Super Nintendo Entertainment System
+shortname: snes
+extensions: 7z, bin, fig, mgd, sfc, smc, swc, zip
+launch: flatpak run org.libretro.RetroArch -f -L "{home}/.var/app/org.libretro.RetroArch/config/retroarch/cores/snes9x.so" {file.path}

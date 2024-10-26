@@ -1,0 +1,10 @@
+[Unit]
+Description=Setup pegasus user directories on system boot
+ConditionPathExists=!%h/.var/app/org.libretro.RetroArch/config/retroarch/.cores_installed
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/pegasus-setup
+
+[Install]
+WantedBy=multi-user.target

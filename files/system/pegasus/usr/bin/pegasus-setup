@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Exit if there are any errors.
+set -oue pipefail
+
+# Setup user pegasus frontend directory
+
+default_conf_dir="/usr/local/share/pegasus-frontend/"
+user_conf_dir="$HOME/.var/app/org.pegasus_frontend.Pegasus/config/pegasus-frontend/"
+
+if [ ! -d "$user_conf_dir" ]; then
+  mkdir -p "$user_conf_dir"
+  cp -r "${default_conf_dir}/*" "$user_conf_dir"
+  # Replace {home} template with users $HOME directory
+  cat "${user_conf_dir}/game_dirs.txt" | sed "s|{home}|$HOME|" > "${user_conf_dir}/game_dirs.txt"
+fi
+
+
+# Setup user home roms directory
+
+default_roms_dir="/usr/local/share/roms"
+user_roms_dir="$HOME/roms"
+
+if [ ! -d "$user_roms_dir" ]; then
+  cp -r "$default_roms_dir" "$user_roms_dir"
+  # Replace {home} template with users $HOME directory
+  find "$user_roms_dir" -type f -name "*.pegasus.txt" -exec sed -i "s|{home}|$HOME|g" {} +
+fi
+

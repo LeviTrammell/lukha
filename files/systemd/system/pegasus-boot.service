@@ -1,0 +1,10 @@
+[Unit]
+Description=Setup pegasus user directories on system boot
+ConditionPathExists=!%h/.var/app/org.pegasus_frontend.Pegasus/config/pegasus-frontend/
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/pegasus-setup
+
+[Install]
+WantedBy=multi-user.target

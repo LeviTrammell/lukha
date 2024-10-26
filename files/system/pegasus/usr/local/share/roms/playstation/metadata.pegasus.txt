@@ -1,0 +1,4 @@
+collection: Sony PlayStation
+shortname: psx
+extensions: cue, ccd, chd, exe, iso, m3u, pbp, toc
+launch: flatpak run org.libretro.RetroArch -f -L "{home}/.var/app/org.libretro.RetroArch/config/retroarch/cores/swanstation_libretro.so" {file.path}

@@ -1,0 +1,5 @@
+collection: Nintendo 64
+shortname: n64
+extensions: 7z, zip, n64, z64, v64
+launch: flatpak run org.libretro.RetroArch -f -L "{home}/.var/app/org.libretro.RetroArch/config/retroarch/cores/parallel_n64_libretro.so" {file.path}
+

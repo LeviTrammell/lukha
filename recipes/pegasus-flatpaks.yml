@@ -1,0 +1,6 @@
+type: default-flatpaks
+system:
+  install:
+    - org.libretro.RetroArch 
+    - org.pegasus_frontend.Pegasus
+

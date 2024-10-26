@@ -1,0 +1,4 @@
+collection: Game Boy Advance
+shortname: gba
+extensions: 7z, zip, gba
+launch: flatpak run org.libretro.RetroArch -f -L "{home}/.var/app/org.libretro.RetroArch/config/retroarch/cores/mgba_libretro.so" {file.path}

@@ -8,3 +8,8 @@ modules:
     repository: "https://github.com/LeviTrammell/dotfiles" # my dotfiles repo
     all-users: true # make users have to enable chezmoi manually
     file-conflict-policy: replace
+  - from-file: pegasus-files.yml
+  - from-file: pegasus-packages.yml
+  - from-file: pegasus-flatpaks.yml
+  - from-file: pegasus-systemd.yml
+

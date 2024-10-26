@@ -1,0 +1,5 @@
+xset -dpms
+xset s noblank
+xset s off
+
+flatpak run org.pegasus_frontend.Pegasus

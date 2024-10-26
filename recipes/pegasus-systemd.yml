@@ -1,0 +1,6 @@
+type: systemd
+system:
+  enabled:
+    - retroarch-boot.service
+    - pegasus-boot.service
+

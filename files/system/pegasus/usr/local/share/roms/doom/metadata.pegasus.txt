@@ -1,0 +1,4 @@
+collection: Doom
+shortname: doom
+extensions: 7z, zip, wad, iwad, pwad
+launch: flatpak run org.libretro.RetroArch -f -L "{home}/.var/app/org.libretro.RetroArch/config/retroarch/cores/prboom_libretro.so" {file.path}

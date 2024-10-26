@@ -1,0 +1,4 @@
+collection: Dos
+shortname: dosbox
+extensions: 7z, zip, exe, com, bat, conf
+launch: flatpak run org.libretro.RetroArch -f -L "{home}/.var/app/org.libretro.RetroArch/config/retroarch/cores/dosbox_core_libretro.so" {file.path}

@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Exit if there are any errors.
+set -oue pipefail
+
+cores=(
+  "prboom"
+  "flycast"
+  "dosbox_core"
+  "gambatte"
+  "mgba"
+  "blastem"
+  "parallel_n64"
+  "melonds"
+  "mesen"
+  "swanstation"
+  "ppsspp"
+  "snes9x"
+)
+
+tmp_dir="~/.tmp"
+mkdir -p "$tmp_dir"
+for core in "${cores[@]}"; do
+  echo "Downloading: $core"
+  curl -o "${tmp_dir}/${core}_libretro.so.zip" "https://buildbot.libretro.com/nightly/linux/x86_64/latest/${core}_libretro.so.zip"
+  echo "Installing: $core"
+  unzip "${tmp_dir}/${core}_libretro.so.zip"
+  mv "${tmp_dir}/${core}_libretro.so" "$HOME/.var/app/org.libretro.RetroArch/config/retroarch/cores/"
+done
+
+touch "$HOME/.var/app/org.libretro.RetroArch/config/retroarch/.cores_installed"
+

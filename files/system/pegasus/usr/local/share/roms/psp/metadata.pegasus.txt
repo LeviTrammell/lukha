@@ -1,0 +1,3 @@
+collection: PSP
+extensions: cso, iso, pbp, zip, chd
+launch: flatpak run org.libretro.RetroArch -f -L "{home}/.var/app/org.libretro.RetroArch/config/retroarch/cores/ppsspp_libretro.so" {file.path}

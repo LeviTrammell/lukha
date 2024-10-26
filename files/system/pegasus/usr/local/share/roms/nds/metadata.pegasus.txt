@@ -1,0 +1,4 @@
+collection: Nintendo DS
+shortname: nds
+extensions: 7z, zip, nds
+launch: flatpak run org.libretro.RetroArch -f -L "{home}/.var/app/org.libretro.RetroArch/config/retroarch/cores/melonds_libretro.so" {file.path}

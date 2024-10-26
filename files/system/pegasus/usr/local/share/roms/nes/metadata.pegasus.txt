@@ -1,0 +1,4 @@
+collection:Nintendo Entertainment System
+shortname: nes
+extensions: 7z, zip, fds, nes
+launch: flatpak run org.libretro.RetroArch -f -L "{home}/.var/app/org.libretro.RetroArch/config/retroarch/cores/mesen_libretro.so" {file.path}
