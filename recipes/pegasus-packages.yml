@@ -1,10 +1,10 @@
 type: rpm-ostree
 install:
   - xorg-x11-server-Xorg
-  - xorg-x11-utils
   - mesa-demos
   - SDL2-devel
   - openbox 
+  - foot 
 
 remove:
   - firefox
