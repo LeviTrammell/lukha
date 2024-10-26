@@ -5,7 +5,7 @@ set -oue pipefail
 
 # Setup user pegasus frontend directory
 
-default_conf_dir="/usr/local/share/pegasus-frontend/"
+default_conf_dir="/usr/share/pegasus-frontend/"
 user_conf_dir="$HOME/.var/app/org.pegasus_frontend.Pegasus/config/pegasus-frontend/"
 
 if [ ! -d "$user_conf_dir" ]; then
@@ -18,7 +18,7 @@ fi
 
 # Setup user home roms directory
 
-default_roms_dir="/usr/local/share/roms"
+default_roms_dir="/usr/share/roms"
 user_roms_dir="$HOME/roms"
 
 if [ ! -d "$user_roms_dir" ]; then
