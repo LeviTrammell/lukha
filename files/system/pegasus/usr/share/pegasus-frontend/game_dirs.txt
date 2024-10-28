@@ -7,6 +7,7 @@
 {home}/roms/gameboy
 {home}/roms/gamegear
 {home}/roms/gba
+{home}/roms/gc
 {home}/roms/gbc
 {home}/roms/genesis
 {home}/roms/mame
