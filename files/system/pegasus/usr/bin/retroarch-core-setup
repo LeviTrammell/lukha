@@ -7,6 +7,7 @@ cores=(
   "prboom"
   "flycast"
   "dosbox_core"
+  "dolphin"
   "gambatte"
   "mgba"
   "blastem"

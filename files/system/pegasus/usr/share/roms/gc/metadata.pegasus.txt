@@ -1,0 +1,4 @@
+collection: GameCube / Wii
+shortname: gc
+extensions: ciso, dff, dol, elf, gcm, gcz, iso, m3u, rvz, tgc, wad, wbfs
+launch: flatpak run org.libretro.RetroArch -f -L "{home}/.var/app/org.libretro.RetroArch/config/retroarch/cores/dolphin_libretro.so" {file.path}
